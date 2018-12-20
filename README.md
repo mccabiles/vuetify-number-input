@@ -1,34 +1,56 @@
 # vuetify-number-input
 
-## Project setup
+vuetify-number-input is a simple wrapper component for the Vuetify Text Field UI component.
+
+
+## Installation
+Install the package from npm:
 ```
-npm install
+npm install --save @jzolago/vuetify-number-input
+```
+Add the package to your app entry point:
+```
+import Vue from 'vue'
+import VuetifyNumberInput from '@jzolago/vuetify-number-input'
+
+Vue.use(VuetifyNumberInput);
 ```
 
-### Compiles and hot-reloads for development
+## Usage
+Once the plugin has been installed, you can now use the `v-input-number` component in your templates.
+Use `v-model` to bind to the value.
 ```
-npm run serve
+<template>
+	<v-input-number v-model="qty"></v-input-number>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			qty: 0,
+		};
+	},
+};
+</script>
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## The v-input-number component
+The component extends the Vuetify `v-text-field` component.
 
-### Run your tests
-```
-npm run test
-```
+### Props:
 
-### Lints and fixes files
-```
-npm run lint
-```
+| Prop | description | type | default |
+| ---- | ---- | ------- | --- |
+| label | Set input label | String | '' |
+| min | Sets minimum value | Number | 0 |
+| max | Sets maximum value | Number | 9999 |
+| maxLength | Sets maximum number of digits. Must align with `max` | Number | 4 |
+| outline | Sets outline style to the input | Boolean | true |
+| rules | An array of functions called for validation that should either return `true` or a String error message. See [Vuetify Text Field docs](https://vuetifyjs.com/en/components/text-fields) for details.| Array | [] |
+| step | Sets amount to be added/subtracted when using +/- icons | Number | 1 |
+| value | Input value | Number, String | undefined |
 
-### Run your unit tests
-```
-npm run test:unit
-```
+### Events:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`@input`: Emitted when value is changed using +/- icons or after user input.
