@@ -1,7 +1,8 @@
 # vuetify-number-input
 
-vuetify-number-input is a simple wrapper component for the Vuetify Text Field UI component.
+vuetify-number-input is a simple wrapper for the Vuetify Text Field UI component for incrementing and decrementing numerical input.
 
+![demo](https://media.giphy.com/media/kwu4GqZzkzdNJbtEBO/giphy.gif)
 
 ## Installation
 Install the package from npm:
